@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home/Home';
+import Sports from './pages/Sports/Sports';
+import Tour from './pages/Tour/Tour';
+import Achieve from './pages/Achieve/Achieve';
+
 import './App.css';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+           
+          <Route path='/' element={<Home/>} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path='/tour' element={<Tour/>} />
+          <Route path='/achieve' element={<Achieve/>} />
+
+
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

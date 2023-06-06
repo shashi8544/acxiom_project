@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.gradient__bg {
+
+    background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+  }
+
+.sports_whole{
+    display: flex;
+    flex-direction: column;
+}
+
+.sports_sportSelect{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+}
+
+.sports_sportSelect_left{
+    background-color: rgb(115, 113, 136);
+    padding: 0.7rem;
+    border-radius: 5rem;
+    margin-left: 5rem;
+    color: white;
+}
+
+.sports_sportSelect_right{
+    background-color: rgb(115, 113, 136);
+    padding: 0.7rem;
+    border-radius: 5rem;
+    margin-left: 5rem;
+    color: white;
+}
+
+.sports_box{
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 5rem;
+    margin-right: 5rem;
+    /* padding: 5rem; */
+}
+
+.sports_box_npbr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(170, 170, 213);
+    border-radius: 3rem;
+}
+
+.sports_box_stats{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+   
+}
+
+.sports_box_stats p{
+    margin-bottom: 0.5rem;
+}
+
+
