@@ -1,0 +1,115 @@
+/* AdminSideForInterIIT.css */
+
+/* Styling for sports selection container */
+.sports_sportSelect {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .sports_sportSelect_left,
+  .sports_sportSelect_right {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .sports_sportSelect_left label,
+  .sports_sportSelect_right label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  /* Styling for the search bar */
+  input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for buttons container */
+  .ButtonsContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .ActionButton {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #745022;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(232, 235, 230, 0.2);
+  }
+  
+  .ActionButton:hover {
+    background-color: #573c1b;
+  }
+  
+  /* Styling for student cards */
+  .SelectedStudentContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .StudentCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 12px 4px rgba(0, 0, 0, 0.2);
+    background-color: #ce9c9c;
+  }
+  
+  .StudentImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .StudentInfo {
+    flex: 1;
+  }
+  
+  .StudentInfo h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .StudentInfo p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (min-width: 768px) {
+    .StudentCard {
+      flex-direction: row;
+    }
+  
+    .StudentImage img {
+      width: 150px;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  
+    .StudentInfo {
+      flex: 3;
+    }
+  }
+  

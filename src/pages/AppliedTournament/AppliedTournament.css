@@ -1,0 +1,21 @@
+.tournamentCard{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin: 10px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.venue{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

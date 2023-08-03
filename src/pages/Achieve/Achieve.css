@@ -1,0 +1,37 @@
+.achieve-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center ;
+     margin: 20px;
+}
+
+.inner-achieve-card{
+    width: 70%;
+    /* align-items: start; */
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.tournament-Name{
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* Apply and Selected Student Box Hover Effects for Touch Devices */
+@media (hover: none) {
+    .achieve-card:hover {
+      opacity: 0.3; /* Keep opacity same for touch devices */
+      cursor: default; /* Reset mouse pointer for touch devices */
+      transform: none; /* Reset zoom effect for touch devices */
+    }
+  }
+  
+  /* Responsive CSS */
+  @media screen and (min-width: 768px) {
+    .achieve-card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }

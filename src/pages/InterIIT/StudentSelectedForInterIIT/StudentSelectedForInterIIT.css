@@ -1,0 +1,77 @@
+.SelectedStudentContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  #studentInfoPara{
+    font-size: x-large;
+  }
+  #StudentInfoName{
+    font-size: 56px;
+    align-items: center;
+  }
+  .SelectedStudentsHeading {
+    background-color: #745022;
+    color: #fff;
+    padding: 10px;
+    margin: 0 0 20px 0;
+    font-size: 56px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .SelectedStudentContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .StudentCard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 12px 4px rgba(0, 0, 0, 1);
+    background-color: #ce9c9c;
+  }
+  
+  .StudentImage img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .StudentInfo {
+    flex: 1;
+  }
+  
+  .StudentInfo h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .StudentInfo p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .StudentCard {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .StudentImage img {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  

@@ -1,0 +1,22 @@
+// import React from "react";
+
+// import Tour from '../../pages/Tour/Tour'
+// import JoinTournament from '../../pages/Tour/JoinTournament'
+// import { Route } from "react-router-dom";
+
+// const GALKRecruitRoot = ({ match }) => {
+//     return (
+//         <>
+//             <Route path={`${match.path}/Jobs`}>
+                
+//                     <Tour />
+                
+//             </Route>
+//             <Route path={`${match.path}/CompanyDetails`}>
+//                     <JoinTournament />
+//             </Route>
+//         </>
+//     );
+// };
+
+// export default (GALKRecruitRoot);

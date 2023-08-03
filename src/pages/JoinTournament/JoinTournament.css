@@ -1,0 +1,161 @@
+
+/* body {
+    background-color: #6fb4ec;
+} */
+.joinBackForward{
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+.sortJoinSport{
+  border: 2px solid grey;
+  display: inline-block;
+  padding: 1%;
+  background-color: #b6bcc7;
+  margin-left: 13%;
+}
+.Join-grid-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column sizes as needed */
+  grid-gap: 10px;
+  flex-direction: row;
+}
+
+.Join-aside {
+  background-color: #f1f1f1;
+  margin-left: 5%;
+}
+
+.Join-section {
+  background-color: #fff;
+  width: 100%;
+  margin-right: 5%;
+  
+  margin-left: 3%;
+}
+.joinContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Join-aside img{
+  /* grid-area: 1 / 1; */
+  width: 100%; /* Ensure the content fills the entire grid cell width */
+  height: 100%;
+}
+#Join-Title{
+  padding-left: 0%;
+}
+.join-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1.2rem;
+  /* Additional styles for the button */
+}
+
+.modal-overlay-join {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+.modal-join {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 101;
+}
+input-container {
+  /* display: flex; */
+  /* align-items: center; */
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+
+  .add-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 50%;
+    background-color: lightgreen;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+
+.join-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #2196f3;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.join-button:hover,
+.add-player:hover {
+  background-color: darkgreen;
+  color: white;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+.join-button:active,
+.add-player:active {
+  background-color: #0a6da3;
+}
+
+
+
+.player-input {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.player-input input {
+  margin-right: 5px;
+}
+
+.remove-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-player:hover {
+  background-color: darkred;
+}

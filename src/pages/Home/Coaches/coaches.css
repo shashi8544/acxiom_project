@@ -1,0 +1,46 @@
+/* coaches.css */
+
+/* CSS styles for the coaches page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #14e0ff; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  #content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #content h2 {
+    margin-top: 0;
+  }
+  
+  .coaches-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .coaches-container h3 {
+    margin-top: 0;
+  }
+  
+  .coaches-container p {
+    margin-bottom: 10px;
+  }
+  
+  #footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  

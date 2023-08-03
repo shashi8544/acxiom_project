@@ -1,0 +1,152 @@
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure the modal appears above other content */
+  }
+  
+  .modal__content {
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Adjust width as needed */
+    max-width: 500px; /* Set a maximum width for larger screens */
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    max-height: 80vh; /* Set a maximum height for the modal content */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+  
+  .modal__close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #333;
+  }
+  
+  .form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form__group label {
+    width: 150px;
+    font-weight: bold;
+  }
+  
+  .form__group input,
+  .form__group select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form__group .upload-btn-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form__group .upload-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .form__group .upload-btn-wrapper input[type='file'] {
+    display: none;
+  }
+  
+  .form__group .file-name {
+    flex: 1;
+  }
+  
+  .form__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .modal__submit-btn,
+  .modal__cancel-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .modal__submit-btn {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .modal__cancel-btn {
+    background-color: #ccc;
+    color: #333;
+  }
+  .modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #333;
+    z-index: 2;
+  }
+  
+  .modal__cross-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 32px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .modal__cross-btn:hover {
+    background: #f9f9f9;
+  }  
+  @media screen and (max-width: 768px) {
+    .modal__content {
+      width: 90%; /* Adjust the width for smaller screens */
+      max-width: 90%; /* Set a maximum width for smaller screens */
+    }
+  
+    .form__group label {
+      width: 120px; /* Adjust the label width for smaller screens */
+    }
+  }

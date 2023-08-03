@@ -1,0 +1,81 @@
+/* CSS styles for the facilities page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #14e0ff; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  #navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #navbar ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #navbar ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  #content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #content h2 {
+    margin-top: 0;
+  }
+  
+  #content p {
+    margin-bottom: 20px;
+  }
+  
+  #footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Facilities styles */
+  .facilities-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .facilities-container h3 {
+    margin-top: 0;
+  }
+  
+  .facilities-list {
+    list-style-type: disc;
+    margin-left: 30px;
+    padding: 0;
+  }
+  
+  .facilities-list li {
+    margin-bottom: 10px;
+  }
+  

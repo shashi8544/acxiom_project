@@ -1,0 +1,391 @@
+/* CreateTournament.css */
+
+
+/* .joinBackForwardcreate {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.joinBackForwardcreate span {
+  color: #333;
+  text-decoration: none;
+}
+
+
+
+.create-aside p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.pdf-input label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pdf-input input[type="file"] {
+  margin-top: 5px;
+}
+
+.CreatedtourCard {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.CreatedtourCard p {
+  font-size: 16px;
+  margin-bottom: 10px;
+} */
+
+/* CreateTournament.css */
+
+/* 1. Header styles */
+.joinBackForwardcreate {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.joinBackForwardcreate a {
+  text-decoration: none;
+  color: #333;
+}
+
+.joinBackForwardcreate span {
+  margin: 0 5px;
+}
+
+/* 2. Main content styles */
+/* CreateTournament.css */
+
+
+
+.create-button {
+  /* Set the background image path and position */
+  background-image: url('../../assets/tour-images/createTour.jpeg');
+  /* background-size: cover; */
+  /* background-position: center; */
+  
+  /* Set the desired width and height for the button */
+  width: 100%;
+  height: 43vh; 
+  
+  /* Add any other desired styling for the button text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: xx-large;
+  /* opacity: 0.4; */
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+
+/* 5. Modal styles */
+.modal-overlay-create {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* width: 100%;
+  height: 100%; */
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.create-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 101;
+}
+
+
+
+.form-group {
+  display: flex;
+  align-items:center ;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  width: 150px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  /* width: 100%; */
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.close-button {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.close-button:hover {
+  background-color: #b3b3b3;
+}
+.create-modal {
+  /* ... Your existing styles ... */
+  max-height: 80vh; /* Set a maximum height for the modal to avoid it taking the whole viewport */
+  overflow: auto; /* Enable vertical scroll when content overflows the max height */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+/* #selectedSport{
+  max-height: 80vh;
+  overflow: auto;
+} */
+
+/* heading = Created tournament */
+.h1-create{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 80%; */
+  margin-top: 20px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #491584;
+  color: white;
+  border-radius: 10px;
+}
+
+/* 6. Created tournament card */
+/* Styles for the CreatedtourCard container */
+.created-card{
+margin: 30px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.CreatedtourCard {
+  position: relative; /* Add position relative to the parent container */
+  display: flex;
+  flex-direction: column;
+  justify-content: start; 
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #1cd6d0;
+  border-radius: 10px;
+}
+
+/* Add a custom button style for the top right button */
+.custom-button {
+  position: absolute;
+  top: 10px; /* Adjust the positioning as needed */
+  right: 10px; /* Adjust the positioning as needed */
+  background-color: #f77f00;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: #ff9600;
+}
+
+.add-match-button{
+  position: absolute;
+  top: 40px; /* Adjust the positioning as needed */
+  right: 10px; /* Adjust the positioning as needed */
+  background-color: #f77f00;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-match-button:hover {
+  background-color: #ff9600;
+}
+
+.end-tournament-button{
+  position: absolute;
+  top: 70px; /* Adjust the positioning as needed */
+  right: 10px; /* Adjust the positioning as needed */
+  background-color: #f77f00;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.end-tournament-button:hover {
+  background-color: #ff9600;
+}
+
+.venue{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.event-name{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-bottom{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+
+.sports-type{
+  display: flex;
+  flex-direction: column;
+
+}
+.date-time{
+  display: flex;
+  flex-direction: column;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border: 6px solid #e6e9e7;
+  border-radius: 3px;
+  animation: loaderAnimation 1.5s linear infinite;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 100%;
+  height: 100%;
+  border: 6px solid transparent;
+  border-radius: 3px;
+  border-top-color: #e91cab;
+  border-radius: 50%;
+  animation: loaderAnimation 1.5s linear infinite;
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-radius: 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
