@@ -1,9 +1,9 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import './Home.css'
-import Hamburger from 'hamburger-react'; 
-import {Carousel} from 'react-responsive-carousel';
+import Hamburger from 'hamburger-react';
+import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import AutomaticImageChanger from "../../Models/ImageChangerHomePage/automaticImageChangerHomePage";
 import basketballImage from '../../assets/img/basketball-g146538a88_1280.jpg';
@@ -15,17 +15,18 @@ import cricketImage from '../../assets/img/cricketFrontPage.jpg'
 import chessImage from '../../assets/img/black-gc2b09a313_1280.jpg';
 import sunsetImage from '../../assets/img/sunset-g5631e5178_1280.jpg';
 import BasketballPage from './Games/Basketball/Basketball';
+import AchievementImg from '../../assets/img/achieve.jpeg'
 
 const Home = () => {
 
     const [isOpen, setOpen] = useState(false);
     const [isMobileScreen, setIsMobileScreen] = useState(false);
-    
+
     const toggleMenu = () => {
         setOpen(!isOpen);
     };
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         const handleResize = () => {
             setIsMobileScreen(window.innerWidth <= 768);
         };
@@ -33,40 +34,42 @@ const Home = () => {
         handleResize();
         window.addEventListener('resize', handleResize);
 
-        return() => {
+        return () => {
             window.removeEventListener('resize', handleResize);
         };
 
     }, []);
     return (
         <div>
-            <Navbar />
-            
+            {/* <Navbar /> */}
+
             {isMobileScreen && (
-              <div className='hamburger-icon'>
-               <Hamburger toggled={isOpen} toggle={toggleMenu} />
-              </div>
-            )}
-            
-            {isMobileScreen && isOpen &&(
-                <div className = 'hamburget-menu'>
-                    <Navbar/>
+                <div className='hamburger-icon'>
+                    <Hamburger toggled={isOpen} toggle={toggleMenu} />
                 </div>
             )}
-            {/* {!isMobileScreen && (
-                <div className = 'navbar-container'>
-                    <Navbar/>
-                </div>    
-            )} */}
+
+            {isMobileScreen && isOpen && (
+                <div className='hamburget-menu'>
+
+                    <Navbar />
+                </div>
+
+            )}
+            {!isMobileScreen && (
+                <div className='navbar-container'>
+                    <Navbar />
+                </div>
+            )}
             <div className='ran'>
-                <AutomaticImageChanger id="AutomaticImageChangerContainer"/>
+                <AutomaticImageChanger id="AutomaticImageChangerContainer" />
             </div>
             <section id="home" style={{
                 // backgroundImage: {sunsetImage}
             }}>
                 <h1 className="h-primary">Welcome to IIT Patna Sports</h1>
                 <p>
-“The aspirations of sports enthusiasts of IIT Patna is given voice by the sports cell. </p>
+                    “The aspirations of sports enthusiasts of IIT Patna is given voice by the sports cell. </p>
 
             </section>
 
@@ -109,21 +112,21 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-                <section id="achievement-section">
+            <section id="achievement-section">
                 <h1 className="h-primary center">Our Achievement</h1>
                 <div id="achievements">
-                  <Carousel showArrows={true} showThumbs={false} infiniteLoop={true}>
-                  <div className="achievements-item">
-                      <img src={badmintonImage} alt="Achievement 1" />
-                  </div>
-                  <div className="achievements-item">
-                      <img src={badmintonImage} alt="Achievement 2" />
-                  </div>
-                  <div className="achievements-item">
-                     <img src={badmintonImage} alt="Achievement 3" />
-                </div>
-            
-                 </Carousel>
+                    <Carousel showArrows={true} showThumbs={false} infiniteLoop={true}>
+                        <div className="achievements-item">
+                            <img src={AchievementImg} alt="Achievement 1" />
+                        </div>
+                        <div className="achievements-item">
+                            <img src={athleteImage} alt="Achievement 2" />
+                        </div>
+                        <div className="achievements-item">
+                            <img src={badmintonImage} alt="Achievement 3" />
+                        </div>
+
+                    </Carousel>
                 </div>
             </section>
 
