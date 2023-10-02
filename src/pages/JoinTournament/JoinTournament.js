@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './JoinTournament.css';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 // import { addJoinTourProject } from '../../action/joinTourAction';
 import { fetchUserJoinedTournamentsFromBackend, updateUserJoinedTournamentInBackend } from "../../action/joinTourAction"
@@ -96,22 +97,22 @@ const JoinTournament = () => {
     }
   }, []);
 
-  const MIN_PLAYER_COUNT = 3;
+  // const MIN_PLAYER_COUNT = 3;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [teamName, setTeamName] = useState('');
   const [captainName, setCaptainName] = useState('');
+  const [collegeName, setCollegeName] = useState('');
   const [players, setPlayers] = useState(['']);
-  const [selectedTournament, setSelectedTournament] = useState(null); // Add state to track the selected tournament
+  const [selectedTournament, setSelectedTournament] = useState(null); 
   const [isUserJoinThisTournament, setIsUserJoinThisTournament] = useState(true);
   const [selectedSportFilter, setSelectedSportFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [hasJoined, setHasJoined] = useState(false);
   const navigate = useNavigate();
-
-  const isUserSignedIn = !!firebase.auth().currentUser; // currentUser will be null if the user is not signed in
+  const user = useSelector((state) => state.auth.userData);
   const handleJoinClick = (tournament) => {
 
-    if (!isUserSignedIn) {
+    if (!user) {
       // If the user is not signed in, redirect to the login and signup page
       alert("please sign in to join this tournament!!!!1") // Replace '/login-or-signup' with your actual route
       return;
@@ -129,6 +130,9 @@ const JoinTournament = () => {
   const handleCaptainNameChange = (e) => {
     setCaptainName(e.target.value);
   };
+  const handleCollegeNameChange = (e) => {
+    setCollegeName(e.target.value);
+  }
   const handlePlayerNameChange = (index, e) => {
     const updatedPlayers = [...players];
     updatedPlayers[index] = e.target.value;
@@ -144,14 +148,14 @@ const JoinTournament = () => {
   // console.log(players);
 
   const handleAddPlayer = () => {
-    if (players.length < 5) {
-      const hasEmptyName = players.some((player) => player.trim() === '');
-      if (hasEmptyName) {
-        alert('Player name cannot be empty');
-      } else {
-        setPlayers([...players, '']);
-      }
+    // if (players.length < 5) {
+    const hasEmptyName = players.some((player) => player.trim() === '');
+    if (hasEmptyName) {
+      alert('Player name cannot be empty');
+    } else {
+      setPlayers([...players, '']);
     }
+    // }
   };
   const handleRemovePlayer = (index) => {
     if (players.length > 1) {
@@ -163,14 +167,14 @@ const JoinTournament = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (teamName.trim() === '' || captainName.trim() === '') {
+    if (teamName.trim() === '' || captainName.trim() === '' || !collegeName) {
       alert('Please fill in all required fields.');
       return;
     }
-    if (players.length < MIN_PLAYER_COUNT) {
-      alert(`Minimum ${MIN_PLAYER_COUNT} players are required.`);
-      return;
-    }
+    // if (players.length < MIN_PLAYER_COUNT) {
+    //   alert(`Minimum ${MIN_PLAYER_COUNT} players are required.`);
+    //   return;
+    // }
 
     // Assuming you have a way to get the "tournamentId" of the selected tournament
     const tournamentId = selectedTournament.id;
@@ -180,16 +184,19 @@ const JoinTournament = () => {
     }
 
     // Assuming you have a way to get the "userId" of the current signed-in user
-    const userId = firebase.auth().currentUser?.uid;
-    if (!userId) {
+
+    if (!user) {
       alert('Error: User ID not available.');
       return;
     }
+    const userId = user.uid;
 
     // Create the join data object to be stored in the backend
     const joinData = {
       teamName: teamName,
       captainName: captainName,
+      eventName: selectedTournament.eventName,
+      selectedSport: selectedTournament.selectedSport,
       players: players,
       // Add any other relevant data you want to store about the user's join
     };
@@ -200,6 +207,7 @@ const JoinTournament = () => {
         if (success) {
           setIsModalOpen(false); // Close the modal after successful submission
           setCaptainName('');
+          setCollegeName('');
           setTeamName('');
           setPlayers([]);
           setIsUserJoinThisTournament(false);
@@ -215,6 +223,13 @@ const JoinTournament = () => {
         alert('Error: Failed to join the tournament. Please try again later.');
       });
   };
+  const handleCloseModel = (e) => {
+    setIsModalOpen(false);
+    setCaptainName('');
+    setCollegeName('');
+    setTeamName('');
+    setPlayers([]);
+  }
   return (
     <div className="tourContainer">
       <Navbar />
@@ -308,7 +323,7 @@ const JoinTournament = () => {
                             {/* <button>{tournament.pdf}</button> */}
                           </div>
                         </div>
-                        {isUserSignedIn ? (
+                        {user ? (
                           hasUserJoinedTournament(tournament) ? (
                             <button className="join-button">
                               You have successfully joined this tournament.
@@ -338,7 +353,9 @@ const JoinTournament = () => {
           {isModalOpen && selectedTournament && (
             <Modal
               tournament={selectedTournament} // Pass the selected tournament data to the Modal
-              closeModal={() => setIsModalOpen(false)} // Pass the closeModal function to the Modal
+              closeModal={handleCloseModel} // Pass the closeModal function to the Modal
+              collegeName={collegeName}
+              handleCollegeNameChange={handleCollegeNameChange}
               captainName={captainName}
               teamName={teamName}
               players={players}

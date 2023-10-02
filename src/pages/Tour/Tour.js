@@ -50,14 +50,14 @@ const Tour = () => {
 
 
             <Link to="/CreateTournament" className='createTourLinkButton'>
-              <div class="box1">
+              <div class="box1 ">
                 <h2 class="h-secondary center">Create a Tournament</h2>
 
               </div>
             </Link>
 
             <Link to="/JoinTournament" className='createTourLinkButton'>
-              <div class="box2" >
+              <div class="box2 " >
 
                 <h2 class="h-secondary center" >Join a Tournament</h2>
 
@@ -67,8 +67,8 @@ const Tour = () => {
             </Link>
 
 
-            <Link to="/AppliedTournament" className='appliedTourLinkButton'>
-              <div class="box3">
+            <Link to="/AppliedTournament" className='createTourLinkButton'>
+              <div class="box3 ">
 
                 <h2 class="h-secondary center">Applied Tournament</h2>
 

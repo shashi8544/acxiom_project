@@ -9,7 +9,7 @@ const TournamentCard = ({ tournament }) => {
       <p>Event Type: {tournament.tournamentType}</p>
       <p>Description: {tournament.description}</p>
       <p>Date: {tournament.date}</p>
-      <p>Time: {tournament.time}</p>
+      <p>DateTime: {tournament.DateTime}</p>
       <p>Venue: {tournament.venue}</p>
       <p>Attachment: {tournament.pdf}</p>
     </div>

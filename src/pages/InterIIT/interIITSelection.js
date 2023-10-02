@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import './interIITSelection.css';
-import StudentInterIITApplyModal from "./StudentInterIITApplyModal/StudentInterIITApplyModal"
-import AdminSideForInterIIT from "./AdminSideForInterIIT/AdminSideForInterIIT"
+import StudentInterIITApplyModal from './StudentInterIITApplyModal/StudentInterIITApplyModal';
+import AdminSideForInterIIT from './AdminSideForInterIIT/AdminSideForInterIIT';
 import { Link } from 'react-router-dom';
+import { fetchStartSelectionField } from '../../action/InterIITAction';
+import { fetchAdminStatus } from "../../action/authenticationAction";
 import firebase from '../../utils/configs/firebaseConfig';
-const firestore = firebase.firestore();
-// const firebase = firebase.firebase();
+import { setUser, setAdminStatus, setIsIITPatnaUser } from '../../action/authenticationAction';
+import './interIITSelection.css'
+
 const InterIIT = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
+    const dispatch = useDispatch();
+    // const shouldShowModal = useSelector((state) => state.modal.shouldShowModal);
+    // console.log(shouldShowModal, "sldfl");
+    const isAdmin = useSelector((state) => state.auth.isAdmin);
+    const user = useSelector((state) => state.auth.userData);
+    let isIITPatnaUser = false;
+    if (user) {
+
+        isIITPatnaUser = user.email.endsWith('@iitp.ac.in');
+    }
+    // console.log(user.email.endsWith('@iitp.ac.in'));
+    console.log(isIITPatnaUser)
     useEffect(() => {
-        const currentUser = firebase.auth().currentUser;
-        if (currentUser) {
-            // Use 'where' function to query the 'admins' collection based on the current user's UID
-            firestore.collection('admins').where(firebase.firestore.FieldPath.documentId(), '==', currentUser.uid).get()
-                .then((querySnapshot) => {
-                    if (querySnapshot.empty) {
-                        console.log("hiii")
-                        setIsAdmin(true);
-                    }
-                })
-                .catch((error) => console.error('Error checking admin status:', error));
-        }
-    }, []);
+        // dispatch(fetchAdminStatus(user));
+        dispatch(fetchStartSelectionField());
+    }, [dispatch]);
 
     const handleApplyClick = () => {
         setIsModalOpen(true);
@@ -33,32 +37,42 @@ const InterIIT = () => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     };
-    return (
-        <div className='sports_whole gradient__bg'>
-            <Navbar />
-            
-            {isAdmin && <AdminSideForInterIIT />}
-            {!isAdmin &&
-                <div className="sports_round_boxes">
-                    <div className="sports_apply_box" onClick={handleApplyClick}>
-                        <h2 className="sports_box_heading" >Apply</h2>
-                        {/* <button className="sports_apply_button">Apply Now</button> */}
+
+    // Check if the user is authenticated and if their email ends with "@iitp.ac.in"
+    if (isIITPatnaUser || isAdmin) {
+        return (
+            <div className='sports_whole gradient__bg'>
+                <Navbar />
+
+                {isAdmin && <AdminSideForInterIIT />}
+                {!isAdmin && 
+                        <h1 id="interIITHeadingPara">Your Journey to InterIIT</h1>
+                   
+                }
+                {!isAdmin && (
+                    <div className='sports_round_boxes'>
+                        <div className='sports_apply_box' onClick={handleApplyClick}>
+                            <h2 className='sports_box_heading'>Apply</h2>
+                        </div>
+                        <Link to='/interiit/Selected-Student' style={{ textDecoration: 'none' }}>
+                            <div className='sports_selected_box'>
+                                <h2 className='sports_box_heading'>Selected Students</h2>
+                            </div>
+                        </Link>
+                        {true && <StudentInterIITApplyModal isOpen={isModalOpen} onClose={handleCloseModal} />}
+
                     </div>
-                    <Link to='/interiit/Selected-Student' style={{ textDecoration: 'none' }}><div className="sports_selected_box">
-                        <h2 className="sports_box_heading">Selected Students</h2>
-                        {/* <button className="sports_selected_button">View List</button> */}
-                    </div></Link>
-                    <StudentInterIITApplyModal isOpen={isModalOpen} onClose={handleCloseModal} />
-                    <Footer />
-                </div>
-
-
-            }
-
-
-
-        </div>
-    );
-}
+                )}
+            </div>
+        );
+    } else {
+        return (
+            <div>
+                <Navbar />
+                <div>You are not allowed to view this page</div>
+            </div>
+        );
+    }
+};
 
 export default InterIIT;

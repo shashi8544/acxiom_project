@@ -1,7 +1,5 @@
 
-/* body {
-    background-color: #6fb4ec;
-} */
+
 .joinBackForward{
   margin-left: 4%;
   margin-bottom: 2%;
@@ -15,7 +13,7 @@
 }
 .Join-grid-container {
   display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the column sizes as needed */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   grid-gap: 10px;
   flex-direction: row;
 }
@@ -70,6 +68,7 @@
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
+  
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 101;
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './StudentInterIITApplyModal.css';
 import { updateFormData } from '../../../action/InterIITAction';
 import firebase from '../../../utils/configs/firebaseConfig'
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
 const StudentInterIITApplyModal = ({ isOpen, onClose }) => {
     const [name, setName] = useState('');
   const [rollNo, setRollNo] = useState('');
@@ -11,15 +12,27 @@ const StudentInterIITApplyModal = ({ isOpen, onClose }) => {
   const [sports, setSports] = useState('');
   const [photo, setPhoto] = useState(null);
 
+  const user = useSelector((state)=>state.auth.userData)
   if (!isOpen) return null;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const user = firebase.auth().currentUser;
       if (user) {
-        const { uid } = user;
+        const uid = user.uid;
+        if(user.email!=email){
+            alert('please enter IITPEmail ONLY');
+            return;
+        }
+        if(phone.length!=10){
+            alert("enter your phone number correctly")
+            return;
+        }
+        if(rollNo.length!=8){
+            alert("enter your rollNo number correctly")
+            return;
+        }
 
         const storageRef = firebase.storage().ref();
 

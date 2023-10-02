@@ -38,8 +38,10 @@
     justify-content: center;
     margin-bottom: 20px;
   }
-  
-  .ActionButton {
+  .ActionButtonPublish:hover {
+    background-color: #b1f110;
+  }
+  .ActionButtonPublish {
     padding: 10px 20px;
     margin: 0 5px;
     font-size: 16px;
@@ -50,10 +52,19 @@
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(232, 235, 230, 0.2);
   }
-  
-  .ActionButton:hover {
-    background-color: #573c1b;
+  .ActionButton1 {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #09dc10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(232, 235, 230, 0.2);
   }
+  
+  
   
   /* Styling for student cards */
   .SelectedStudentContent {

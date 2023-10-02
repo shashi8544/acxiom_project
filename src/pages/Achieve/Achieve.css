@@ -1,37 +1,69 @@
-.achieve-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-     align-items: center ;
-     margin: 20px;
+/* AchievementList.css */
+
+/* Style for the achievement card */
+.achieve-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.inner-achieve-card{
-    width: 70%;
-    /* align-items: start; */
-    background-color: aqua;
-    border-radius: 10px;
-    padding: 20px;
+/* Style for the event image */
+.achieve-card img {
+  width: 400px; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 5%;
+  margin-bottom: 10px;
 }
 
-.tournament-Name{
-    align-items: center;
-    justify-content: center;
-
+/* Style for the event name */
+.tournament-Name h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* Apply and Selected Student Box Hover Effects for Touch Devices */
-@media (hover: none) {
-    .achieve-card:hover {
-      opacity: 0.3; /* Keep opacity same for touch devices */
-      cursor: default; /* Reset mouse pointer for touch devices */
-      transform: none; /* Reset zoom effect for touch devices */
-    }
+/* Style for the event description */
+.event-Description {
+  text-align: center;
+  color: #777;
+  margin: 10px 0;
+}
+
+/* Style for the selected sports */
+.event-selectedSports {
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .achieve-card {
+    padding: 10px;
+    margin: 10px;
   }
-  
-  /* Responsive CSS */
-  @media screen and (min-width: 768px) {
-    .achieve-card {
-      grid-template-columns: repeat(2, 1fr);
-    }
+
+  .achieve-card img {
+    width: 150px;
+    height: 150px;
   }
+
+  .tournament-Name h1 {
+    font-size: 18px;
+  }
+
+  .event-Description {
+    font-size: 14px;
+  }
+
+  .event-selectedSports {
+    font-size: 12px;
+  }
+}

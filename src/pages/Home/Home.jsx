@@ -18,7 +18,6 @@ import BasketballPage from './Games/Basketball/Basketball';
 import AchievementImg from '../../assets/img/achieve.jpeg'
 
 const Home = () => {
-
     const [isOpen, setOpen] = useState(false);
     const [isMobileScreen, setIsMobileScreen] = useState(false);
 
@@ -41,9 +40,9 @@ const Home = () => {
     }, []);
     return (
         <div>
-            {/* <Navbar /> */}
+            <Navbar />
 
-            {isMobileScreen && (
+            {/* {isMobileScreen && (
                 <div className='hamburger-icon'>
                     <Hamburger toggled={isOpen} toggle={toggleMenu} />
                 </div>
@@ -60,8 +59,8 @@ const Home = () => {
                 <div className='navbar-container'>
                     <Navbar />
                 </div>
-            )}
-            <div className='ran'>
+            )} */}
+            {/* <div className='ran'>
                 <AutomaticImageChanger id="AutomaticImageChangerContainer" />
             </div>
             <section id="home" style={{
@@ -71,47 +70,71 @@ const Home = () => {
                 <p>
                     “The aspirations of sports enthusiasts of IIT Patna is given voice by the sports cell. </p>
 
-            </section>
+            </section> */}
+            <div className='iitp-image'>
+            <div className="text">
+                <h1 >Welcome to IIT Patna Sports</h1>
+                <p>
+                    “The aspirations of sports enthusiasts of IIT Patna is given voice by the sports cell. </p>
+            </div>
+            </div>
+            <div className="h-primary center">Games</div>
+
 
             <section id="game-container">
-                <h1 className="h-primary center">Games</h1>
+
                 <div id="games">
-                    <div className="box">
-                        <img src={basketballImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/basketball">Basketball</Link> {/*link to basketball page*/}</h2>
+                    <Link to="/basketball" style={{ textDecoration: 'none' }}>
+                        <div className=" box1 box">
+                            {/* <img src={basketballImage} alt=""></img> */}
+                            <h2 className="h-secondary center">Basketball {/*link to basketball page*/}</h2>
+                        </div>
+                    </Link>
+
+                    <Link to="/Badminton" style={{ textDecoration: 'none' }}>
+                        <div className="box box2">
+                            {/* <img src={badmintonImage} alt=""></img> */}
+                            <h2 className="h-secondary center">Badminton</h2>
+
+                        </div>
+                    </Link>
+                    <Link to="/athlete" style={{ textDecoration: 'none' }}>
+                        <div className="box box3">
+                            {/* <img src="https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fathlete-gb45b1e826_1280.jpg?alt=media&token=4d3d2a42-2429-4651-b364-43539b7a20d2" alt="Image From Firebase"></img> */}
+                            <h2 className="h-secondary center">Athlete</h2>
+
+                        </div>
+                    </Link>
+                    <Link to="/football" style={{ textDecoration: 'none' }}>
+                        <div className="box box4">
+                            {/* <img src={footballImage} alt=""></img> */}
+                            <h2 className="h-secondary center">Football</h2>
+
+                        </div>
+                    </Link>
+                    <Link to="/volleyball"  style={{ textDecoration: 'none' }} >
+                    <div className="box box5">
+                        {/* <img src={volleyballImage} alt=""></img> */}
+                        <h2 className="h-secondary center">Volleyball</h2>
 
                     </div>
-                    <div className="box">
-                        <img src={badmintonImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/Badminton">Badminton</Link></h2>
+                    </Link>
+                    <Link to="/chess" style={{ textDecoration: 'none' }}>
+                        <div className="box box6">
+                            {/* <img src={chessImage} alt=""></img> */}
+                            <h2 className="h-secondary center">Chess</h2>
 
-                    </div>
-                    <div className="box">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fathlete-gb45b1e826_1280.jpg?alt=media&token=4d3d2a42-2429-4651-b364-43539b7a20d2" alt="Image From Firebase"></img>
-                        <h2 className="h-secondary center"><Link to="/athlete">Athlete</Link></h2>
-
-                    </div>
-                    <div className="box">
-                        <img src={footballImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/football">Football</Link></h2>
-
-                    </div>
-                    <div className="box">
-                        <img src={volleyballImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/volleyball">Volleyball</Link></h2>
-
-                    </div>
-                    <div className="box">
-                        <img src={chessImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/chess">Chess</Link></h2>
-
-                    </div>
-                    <div className="box">
-                        <img src={cricketImage} alt=""></img>
-                        <h2 className="h-secondary center"><Link to="/cricket">Cricket</Link></h2>
-                    </div>
+                        </div>
+                    </Link>
+                    <Link to="/cricket" style={{ textDecoration: 'none' }}>
+                        <div className="box box7">
+                            {/* <img src={cricketImage} alt=""></img> */}
+                            <h2 className="h-secondary center">Cricket</h2>
+                        </div>
+                    </Link>
                 </div>
             </section>
+
             <section id="achievement-section">
                 <h1 className="h-primary center">Our Achievement</h1>
                 <div id="achievements">
@@ -157,6 +180,7 @@ const Home = () => {
             <footer>
                 <div classNameName="center">
                     Copyright &copy; www.sportiitp.com.
+                    <span>This website is developed by sweta,pritam and <a href='https://www.linkedin.com/in/shashi-ranjan-kumar-86405821b/' target='_blank'>shashi</a></span>
                 </div>
             </footer>
 

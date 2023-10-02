@@ -114,10 +114,13 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-
-
-  
+  #interIITHeadingPara{
+      color: white;
+      margin-left: 35%;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: xx-large;
+  }
   .sports_apply_box {
     /* You can use any image URL here */
     background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/InterIIT%2FImage%2Fapply.png?alt=media&token=4c0991c3-e08f-46b9-9a53-219c3f7c7110');
@@ -126,6 +129,9 @@
   .sports_selected_box {
     /* You can use any image URL here */
     background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/InterIIT%2FImage%2Fselected.jpg?alt=media&token=3c32632e-ec30-4c28-8259-abd44d76437e');
+  }
+  #interIITHeadingPara{
+    
   }
   
   /* Responsive CSS */

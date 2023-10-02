@@ -1,0 +1,106 @@
+
+[
+    "chess##2023-08-26T23:51:39.979Z": 
+        [
+            {
+        captainName: "Shashi",
+eventName: "Wizard Game",
+players : [
+                    "shashi",
+                    "fddf",
+                    "ffdfd"
+                ],
+selectedSport: "chess",
+teamName: "wizard",
+            }
+        ],
+    "chess##2023-08-26T23:51:39.979Z": 
+        [
+            {
+        captainName: "Shashi",
+eventName: "Wizard Game",
+players : [
+                    "shashi",
+                    "fddf",
+                    "ffdfd"
+                ],
+selectedSport: "chess",
+teamName: "wizard",
+            }
+        ]
+    },
+    "cricket##2023-08-2633453979Z": {
+        [
+            {
+        captainName: "sdfsd",
+eventName: "sf sf",
+players : [
+                    "sdfsdf",
+                    "sfsdffdggdf",
+                    "ghgh"
+                ],
+selectedSport: "cricket",
+teamName: "reterter",
+            }
+        ]
+    ,
+    "cricket##2023-08-2633453979Z": 
+        [
+            {
+        captainName: "sdfsd",
+eventName: "sf sf",
+players : [
+                    "sdfsdf",
+                    "sfsdffdggdf",
+                    "ghgh"
+                ],
+selectedSport: "cricket",
+teamName: "reterter",
+            }
+        ]
+    
+]
+
+{
+    chess:[{
+    captainName: "Shashi",
+eventName: "Wizard Game",
+players : [
+                "shashi",
+                "fddf",
+                "ffdfd"
+            ],
+selectedSport: "chess",
+teamName: "wizard",
+        },{
+            captainName: "Shashi",
+    eventName: "Wizard Game",
+    players : [
+                        "shashi",
+                        "fddf",
+                        "ffdfd"
+                    ],
+    selectedSport: "chess",
+    teamName: "wizard",
+                }],
+    cricket:[ {
+        captainName: "sdfsd",
+eventName: "sf sf",
+players : [
+                    "sdfsdf",
+                    "sfsdffdggdf",
+                    "ghgh"
+                ],
+selectedSport: "cricket",
+teamName: "reterter",
+            }, {
+                captainName: "sdfsd",
+        eventName: "sf sf",
+        players : [
+                            "sdfsdf",
+                            "sfsdffdggdf",
+                            "ghgh"
+                        ],
+        selectedSport: "cricket",
+        teamName: "reterter",
+                    }]}

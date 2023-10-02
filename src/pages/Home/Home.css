@@ -35,7 +35,7 @@ html{
     opacity: 0.8;
 }
 
-/* Navigation Bar: Logo and Image */
+/* Navigation Bar: Logo and Image
 #logo{
     margin: 10px 34px;
 }
@@ -43,7 +43,7 @@ html{
 #logo img{
     height: 59px;
     margin: 3px 6px;
-}
+} */
 
 
 /* Navigation Bar: List Styling */
@@ -138,25 +138,28 @@ html{
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-#games .box{
+/********************/
+
+/* #games .box{
     border: 2px solid rgb(13 13 88);
     padding: 34px;
     margin: 2px 55px;
     border-radius: 28px;
-    background: #f2f2f2;
     margin-bottom: 20px;
 }
 #games .box img{ 
     height: 160px;
     margin: auto;
-    display: block;
+     display: block;
  }
  
  #games .box p{
      font-family: 'Bree Serif', serif;
  
- } 
+ }   */
 
+
+ /************************/
 
 /* achievements Section */
 #achievement-section{ 
@@ -251,10 +254,31 @@ footer{
 }
 
 /* Utility Classes */
+
+.iitp-image{
+   
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2FcricketFrontPage.jpg?alt=media&token=1dada047-af54-453f-9b9a-e5116e3cc368'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    margin: 40px;
+    
+}
+
 .h-primary{
     font-family: 'Bree Serif', serif;
     font-size: 3.8rem;
-    padding: 12px;
+    padding: 8px;
+    color: white;
+    background-color: rgb(174, 95, 50);
+    margin: 20px;
+    border-radius: 20px;
 }
 
 .h-secondary{
@@ -293,6 +317,61 @@ footer{
     padding: 10px;
 }
 
+.box{
+    /* display: grid;
+    grid-template-columns: auto; */
+    /* overflow-x: hidden; */
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    opacity: 0.6;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8e8;
+    border-radius: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+}
+.box:hover {
+    opacity: 1; /* Increase opacity on hover */
+    cursor: pointer; /* Change mouse pointer on hover */
+    transform: scale(1.05); /* Apply zoom effect on hover */
+  }
+.box1 {
+    opacity: 0.6;
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fbasketball-g146538a88_1280.jpg?alt=media&token=b170f038-a743-4904-bd6c-58fac2ed96e9');
+  }
+  .box2 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fbadminton-g859bb222c_1280.jpg?alt=media&token=8e20fd69-517f-4616-904d-cdddcdfbb55c');
+  }
+  .box3 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fathlete-gb45b1e826_1280.jpg?alt=media&token=4d3d2a42-2429-4651-b364-43539b7a20d2');
+  }
+  .box4 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Ffootball-g3e1c63b19_1280.jpg?alt=media&token=f15b2ca8-5edf-4186-9267-7568dbfa7377');
+  }
+  .box5 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fsunset-g5631e5178_1280.jpg?alt=media&token=f706c986-44f0-4428-b4f8-ea64dbd5e87a');
+  }
+  .box6 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2Fblack-gc2b09a313_1280.jpg?alt=media&token=c6385500-2247-4f9c-b5ea-4e2573c3e199');
+  }
+  .box7 {
+    /* You can use any image URL here */
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/interiit-57302.appspot.com/o/Image%2FcricketFrontPage.jpg?alt=media&token=1dada047-af54-453f-9b9a-e5116e3cc368');
+  }
 
 
 
