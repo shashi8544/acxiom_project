@@ -22,7 +22,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isMobileScreenShow, setIsMobileScreenShow] = useState(false);
-
+  const [isLoginType,setIsLoginType] = useState(false);
   const toggleMenu = () => {
     setOpen(!isOpen);
   };
@@ -90,92 +90,25 @@ const Navbar = () => {
         <div className="navbar_left">
           {/* {isMobileScreen && ( */}
           {/* )} */}
-          <h1>Sports IIT PATNA</h1>
+          <h1>Acxiom Store</h1>
         </div>
       )}
-      {isMobileScreen && isMobileScreenShow && (
-        <div className="navbar_right">
-          <p ><Link to="/" className='navbar-link-element'>Home</Link></p>
-          <p ><Link to="/tour" className='navbar-link-element'>Tournament</Link></p>
-          <p ><Link to="/achieve" className='navbar-link-element'>Achievements</Link></p>
-          <p ><Link to="/interiit" className='navbar-link-element'>InterIIT</Link></p>
-
-          {user ? (
-            <span className="user-initial" onClick={handleUserInitialClick}>
-              {user.email[0].toUpperCase()}
-            </span>
-          ) : (
-            <button onClick={handleToggleModal}>
-              {showSignIn ? "Sign In" : "Sign Up"}
-            </button>
-          )}
-
-          {showModal && (
-            <div className="modal-auth">
-              <div className="modal_content">
-                <span className="close" onClick={handleToggleModalCrossClick}>&times;</span>
-                <button onClick={() => setShowSignIn(!showSignIn)}>SignIn</button>
-                <button onClick={() => setShowSignIn(!showSignIn)}>SignUp</button>
-
-                {showSignIn ? <SignIn onClose={handleToggleModal} onSignIn={handleSignIn} /> : <SignUp onClose={handleToggleModal} />}
-
-              </div>
-            </div>
-          )}
-
-
-          {showUserOptions && (
-            <UserOptionsMenu onSignOut={handleSignOut} />
-          )}
-        </div>
-      )}
+      
+      
       {
         !isMobileScreen && (
           <div className="navbar_left">
             {/* {isMobileScreen && ( */}
             {/* )} */}
-            <h1>Sports IIT PATNA</h1>
+            <h1>Acxiom Store</h1>
           </div>
         )
       }
-      {
-        !isMobileScreen && (
-          <div className="navbar_right">
-            <p ><Link to="/" className='navbar-link-element'>Home</Link></p>
-            <p ><Link to="/tour" className='navbar-link-element'>Tournament</Link></p>
-            <p ><Link to="/achieve" className='navbar-link-element'>Achievements</Link></p>
-            <p ><Link to="/interiit" className='navbar-link-element'>InterIIT</Link></p>
-
-            {user ? (
-              <span className="user-initial" onClick={handleUserInitialClick}>
-                {user.email[0].toUpperCase()}
-              </span>
-            ) : (
-              <button onClick={handleToggleModal}>
-                {showSignIn ? "Sign In" : "Sign Up"}
-              </button>
-            )}
-
-            {showModal && (
-              <div className="modal-auth">
-                <div className="modal_content">
-                  <span className="close" onClick={handleToggleModalCrossClick}>&times;</span>
-                  <button onClick={() => setShowSignIn(!showSignIn)}>SignIn</button>
-                  <button onClick={() => setShowSignIn(!showSignIn)}>SignUp</button>
-
-                  {showSignIn ? <SignIn onClose={handleToggleModal} onSignIn={handleSignIn} /> : <SignUp onClose={handleToggleModal} />}
-
-                </div>
-              </div>
-            )}
-
-
-            {showUserOptions && (
-              <UserOptionsMenu onSignOut={handleSignOut} />
-            )}
-          </div>
-        )
-      }
+      <div className="navbar_right">
+     <p ><Link to="/logintype" className='navbar-link-element'>Login</Link></p> 
+        {/* <p><Link to="/Home" className='navbar-link-element'></Link>Home</p> */}
+      </div>
+      
 
 
     </div>

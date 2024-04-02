@@ -1,0 +1,35 @@
+/* VendorPage.css */
+
+.vendor-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .products-container {
+    margin-top: 20px;
+  }
+  
+  .product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .product-item h3 {
+    margin-top: 0;
+  }
+  
+  .product-item p {
+    margin: 5px 0;
+  }
+  
+  /* Style for the message when no products are available */
+  .no-products-message {
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+  }
+  

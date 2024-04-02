@@ -1,0 +1,55 @@
+/* Base styles */
+.login-type-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows containers to wrap onto the next line */
+}
+
+.login-container {
+  width: 30%;
+  min-width: 200px; /* Set a minimum width for smaller screens */
+  max-width: 400px; /* Set a maximum width for larger screens */
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.login-container:hover {
+  transform: scale(1.05);
+  background-color: antiquewhite; /* Zoom effect on hover */
+}
+
+.login-container h2 {
+  margin-top: 0;
+}
+
+.vendor {
+  background-color: #93d46d;
+}
+
+.user {
+  background-color: #faf73a;
+}
+
+.admin {
+  background-color: #f193ab;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 40%; /* Adjust the width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .login-container {
+    width: 80%; /* Adjust the width for even smaller screens */
+  }
+}
