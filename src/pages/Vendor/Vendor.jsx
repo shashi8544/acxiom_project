@@ -6,23 +6,43 @@ import AddProductModal from './AddProductModal'; // Import the AddProductModal c
 const VendorPage = () => {
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    // Fetch products data from Firestore
-    const fetchData = async () => {
-      try {
-        const vendorId = firebase.auth().currentUser.uid; // Get the current vendor's UID
-        const productsRef = firebase.firestore().collection('vendors').doc(vendorId).collection('products');
-        const snapshot = await productsRef.get();
-        const productsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setProducts(productsData);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
+    // Fetch current user
+    const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+      setCurrentUser(user);
+    });
 
-    fetchData();
+    return () => {
+      unsubscribe();
+    };
   }, []);
+
+  useEffect(() => {
+    // Fetch products data from Firestore if currentUser exists
+    if (currentUser) {
+      const fetchData = async () => {
+        try {
+          const vendorId = currentUser.uid; // Get the current vendor's UID
+          const productsRef = firebase.firestore().collection('vendors').doc(vendorId).collection('products');
+          const snapshot = await productsRef.get();
+          const productsData = snapshot.docs.map(doc => {
+            const productData = doc.data();
+            const productId = doc.id;
+            const productType = productData.type || 'General'; // Default to 'General' if type is not specified
+             // Generate unique code based on current date and time
+            return { id: productId, type: productType,...productData };
+          });
+          setProducts(productsData);
+        } catch (error) {
+          console.error('Error fetching products:', error);
+        }
+      };
+
+      fetchData();
+    }
+  }, [currentUser]);
 
   const handleAddProduct = () => {
     setShowModal(true);
@@ -31,6 +51,9 @@ const VendorPage = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+
+  // Function to generate unique code based on current time and date
+  
 
   return (
     <div className="vendor-page-container">
@@ -47,6 +70,8 @@ const VendorPage = () => {
                 {/* Render each product */}
                 <div>
                   <h3>{product.name}</h3>
+                  <p>Type: {product.type}</p>
+                  <p>Code: {product.code}</p>
                   <p>Description: {product.description}</p>
                   <p>Price: {product.price}</p>
                   {/* Add more product details as needed */}

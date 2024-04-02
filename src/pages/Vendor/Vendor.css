@@ -1,35 +1,57 @@
-/* VendorPage.css */
-
 .vendor-page-container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
   }
   
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-add-product {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
   .products-container {
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
   }
   
   .product-item {
-    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 20px;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
   }
   
   .product-item h3 {
     margin-top: 0;
   }
   
-  .product-item p {
-    margin: 5px 0;
+  .no-products-message {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
   }
   
-  /* Style for the message when no products are available */
-  .no-products-message {
-    font-size: 20px;
-    color: #666;
-    text-align: center;
-    margin-top: 20px;
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .products-container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .products-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
   }
   

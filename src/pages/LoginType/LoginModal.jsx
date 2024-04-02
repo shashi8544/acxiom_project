@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import firebase from "../../utils/configs/firebaseConfig";
 import './LoginModal.css';
 
@@ -6,6 +6,22 @@ const LoginModal = ({ onClose }) => {
   const [formData, setFormData] = useState({ email: '', password: '', username: '' });
   const [errorMessage, setErrorMessage] = useState('');
   const [isSignInMode, setIsSignInMode] = useState(true);
+  const [vendors, setVendors] = useState([]);
+
+  useEffect(() => {
+    // Fetch list of vendors from Firebase Firestore
+    const fetchVendors = async () => {
+      try {
+        const vendorsSnapshot = await firebase.firestore().collection('vendors').get();
+        const vendorsData = vendorsSnapshot.docs.map(doc => doc.data());
+        setVendors(vendorsData);
+      } catch (error) {
+        console.error('Error fetching vendors:', error);
+      }
+    };
+
+    fetchVendors();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -64,7 +80,11 @@ const LoginModal = ({ onClose }) => {
       alert('Please check your email for verification.');
     } catch (error) {
       console.error('Error signing up:', error);
-      setErrorMessage('Error signing up. Please try again.');
+      if (error.code === 'auth/email-already-in-use') {
+        setErrorMessage('Email address is already in use. Please sign in instead.');
+      } else {
+        setErrorMessage('Error signing up. Please try again.');
+      }
     }
   };
 
@@ -104,6 +124,8 @@ const LoginModal = ({ onClose }) => {
         <button className="toggle-button" onClick={handleToggleMode}>
           {isSignInMode ? 'Create an account' : 'Sign in'}
         </button>
+
+       
       </div>
     </div>
   );

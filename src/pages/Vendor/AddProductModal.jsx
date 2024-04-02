@@ -6,21 +6,32 @@ const AddProductModal = ({ onClose }) => {
   const [productName, setProductName] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [productPrice, setProductPrice] = useState('');
-
+  const uniqueCode = generateUniqueCode();
   const handleAddProduct = async () => {
     try {
       const vendorId = firebase.auth().currentUser.uid;
       await firebase.firestore().collection('vendors').doc(vendorId).collection('products').add({
         name: productName,
         description: productDescription,
-        price: productPrice
+        price: productPrice,
+        code:  uniqueCode 
+
       });
       onClose(); // Close the modal after adding the product
     } catch (error) {
       console.error('Error adding product:', error);
     }
   };
-
+  const generateUniqueCode = () => {
+    const currentDate = new Date();
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const year = currentDate.getFullYear();
+    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+    const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+    return `${day}${month}${year}${hours}${minutes}${seconds}`;
+  };
   return (
     <div className="modal">
       <div className="modal-content">

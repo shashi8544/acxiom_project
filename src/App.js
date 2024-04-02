@@ -4,6 +4,7 @@ import {store} from './Reducers/stores'
 import Home from './pages/Home/Home';
 import LoginType from './pages/LoginType/LoginType';
 import Vendor from './pages/Vendor/Vendor';
+import Axiomsuser from './pages/Axiomuser/Axiomuser'
 import { fetchAdminStatus } from './action/authenticationAction';
 const App = () => {
   
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/logintype" element={<LoginType/>} />
         <Route path="/vendor" element={<Vendor/>} />
+        <Route path="/useraxiom" element={<Axiomsuser/>} />
         {/* <Route path="/joinTournament" element={<JoinTournament />} /> */}
         {/* <Route path="/interiit/*" element={<InterIIT />} />
         <Route path="/tour" element={<Tour />} />
