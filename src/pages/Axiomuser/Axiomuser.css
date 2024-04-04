@@ -1,32 +1,200 @@
-.axiom-user-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
+/* Axiomuser.css */
+
+.admin-user-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 10px; /* Adjust margin for smaller screens */
+  padding: 12px 24px;
+  background-color: #a55520;
+  border: none;
+  color: rgb(243, 253, 106);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #108afd;
+}
+
+.vendor-list select {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.selected-vendor-products {
+  margin-top: 20px;
+}
+
+.product-container {
+  border: 1px solid #60c923;
+  background-color: rgb(233, 36, 190);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.product-container h3 {
+  margin-top: 0;
+}
+
+.product-container p {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
   .button-container {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
   }
-  
+}
+
+@media (max-width: 576px) {
   .button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
   }
-  
-  .button:hover {
-    background-color: #45a049;
-  }
-  
+}
+/* Axiomuser.css */
+
+.admin-user-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #a55520; /* Green */
+  border: none;
+  color: rgb(243, 253, 106);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #108afd;
+}
+
+.vendor-list select {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styles for selected vendor products */
+.selected-vendor-products {
+  margin-top: 20px;
+}
+
+.product-container {
+  border: 1px solid #60c923;
+  background-color: rgb(233, 36, 190);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.product-container h3 {
+  margin-top: 0;
+}
+
+.product-container p {
+  margin-bottom: 5px;
+}
+
+.cart-container,
+.guest-list-container {
+  margin-top: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.product-card p {
+  margin-bottom: 5px;
+}
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.product-card p {
+  margin: 5px 0;
+}
+/* Axiomuser.css */
+
+.order-status-container {
+  margin-top: 20px;
+}
+
+.order-status-card {
+  border: 1px solid #12db12;
+  background-color: rgb(23, 231, 238);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.order-status-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.order-status-card p {
+  margin: 5px 0;
+}
+
+.order-status-card button {
+  background-color: red;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.order-status-card button:hover {
+  background-color: rgb(16, 231, 34);
+}

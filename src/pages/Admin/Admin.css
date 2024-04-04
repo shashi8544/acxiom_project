@@ -1,0 +1,38 @@
+*{
+    background-color: #09edf5;
+}
+.admin-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #17dd28;
+  }
+  
+  .admin-card {
+    border: 1px solid #ccc;
+    background-color: rgb(224, 221, 10);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-card button {
+    background-color: #fa560a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .admin-card button:hover {
+    background-color: #0056b3;
+  }
+  
